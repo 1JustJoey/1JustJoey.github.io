@@ -1,0 +1,128 @@
+<!-- Page Title -->
+<title>Website Framework</title>
+<!-- Load the framework -->
+<script src="https://teknixstuff.github.io/AIOstacks/frontend/TVSP.js"></script>
+<script>AIO.loadSCSS('https://teknixstuff.github.io/AIOstacks/frontend/TVSP/autostyls.tscss');</script>
+<script src="https://teknixstuff.github.io/AIOstacks/frontend/TVSP/autostyls.js"></script>
+<!-- Config -->
+<meta x-type="config" x-name="background-image" x-value="win10bg.jpg">
+<!-- Custom Scripts -->
+<script>
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+  let placeholderElem = document.createElement('div');
+  placeholderElem.style.width = elmnt.offsetWidth;
+  placeholderElem.style.height = elmnt.offsetHeight;
+  placeholderElem.style.display = 'none';
+  let elem_old_pos = {};
+  elem_old_pos.width = elmnt.offsetWidth;
+  elem_old_pos.height = elmnt.offsetHeight;
+  elem_old_pos.left = elmnt.getBoundingClientRect().left;
+  elem_old_pos.top = elmnt.getBoundingClientRect().top;
+  let insetedPlaceholder = false;
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    elmnt.style.left = elmnt.getBoundingClientRect().left;
+    elmnt.style.top = elmnt.getBoundingClientRect().top;
+    elmnt.style.position = 'absolute';
+    if (!insetedPlaceholder) {
+      elmnt.insertAdjacentElement('beforebegin', placeholderElem);
+      insetedPlaceholder = true;
+    }
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    // check position
+    if (
+        ((elem_old_pos.left + elem_old_pos.width) > elmnt.getBoundingClientRect().left) &&
+        ((elmnt.getBoundingClientRect().left + elmnt.offsetWidth) > elem_old_pos.left) &&
+        ((elem_old_pos.top + elem_old_pos.height) > elmnt.getBoundingClientRect().top) &&
+        ((elmnt.getBoundingClientRect().top + elmnt.offsetHeight) > elem_old_pos.top)
+      ) {
+      placeholderElem.style.display = 'block';
+    } else {
+      placeholderElem.style.display = 'none';
+    }
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+    if (
+        ((elem_old_pos.left + elem_old_pos.width) > elmnt.getBoundingClientRect().left) &&
+        ((elmnt.getBoundingClientRect().left + elmnt.offsetWidth) > elem_old_pos.left) &&
+        ((elem_old_pos.top + elem_old_pos.height) > elmnt.getBoundingClientRect().top) &&
+        ((elmnt.getBoundingClientRect().top + elmnt.offsetHeight) > elem_old_pos.top)
+      ) {
+      elmnt.style.left = elem_old_pos.left;
+      elmnt.style.top = elem_old_pos.top;
+    }
+  }
+}
+</script>
+<!-- Body -->
+<style>
+body {
+  color: black;
+}
+
+h1 {
+  color: black;
+}
+
+div {
+  color: black;
+}
+</style>
+<body class="flex flex-none content-center justify-center items-center flex-col p-2">
+  <div class="backdrop-blur bg-white/25 flex flex-none content-center justify-center items-center flex-col border-2 hover:z-50" id="infocard">
+    <div class="w-full bg-white/50 border-b-2 bg-[url('light1.png')]" id="infocardheader">
+      <span class="float-left px-2">Title Text Here</span>
+      <span class="float-right bg-black/25 rounded-b"><img src="winbtns.png"></span>
+    </div>
+    <div class="p-2 flex flex-none content-center justify-center items-center flex-col bg-[url('light2.png')]">
+      <img src="exampleimg.png" width="128" height="128" class="p-1">
+      <h1 class="text-xl text-center inline-block p-1 rounded">Example Text</h1>
+      <div class="flex flex-none content-center justify-center items-center flex-col bg-white/35 backdrop-blur rounded p-2">
+        <div>
+          <a href="https://example.com" class="text-inherit underline">
+            <span>
+              <img src="exampleimg.png" width="16" height="16" class="inline"> Example Link 1
+            </span>
+          </a>
+		  <span class="px-1">|</span>
+		  <a href="https://example.com" class="text-inherit underline">
+            <span>
+              <img src="exampleimg.png" width="16" height="16" class="inline"> Example Link 2
+            </span>
+          </a>
+	    </div>
+  </div>
+  <script>dragElement(document.getElementById('infocard'));</script>
+</body>
