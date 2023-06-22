@@ -1,28 +1,24 @@
+@import url (https://1justjoey.github.io/BDXPTHEME/Background.css);
+
 :root {
   --server-size: var(--HSL-server-icon-size, var(--HSL-size, 35px));
   --server-spacing: var(--HSL-server-spacing, var(--HSL-spacing, 10px));
   --server-container: calc(var(--server-size) + 20px);
   --server-direction: var(--HSL-server-direction, column);
   --server-alignment: var(--HSL-server-alignment, flex-start);
-  :root {
-  --server-size: var(--HSL-server-icon-size, var(--HSL-size, 35px));
-  --server-spacing: var(--HSL-server-spacing, var(--HSL-spacing, 10px));
-  --server-container: calc(var(--server-size) + 20px);
-  --server-direction: var(--HSL-server-direction, column);
-  --server-alignment: var(--HSL-server-alignment, flex-start);
-  --transparencycolor:			0,0,0;						/* default:	0,0,0																								*/
+  --transparencycolor:			0,0,0;						/* default:	0,0,0		    																						*/
 	--transparencyalpha:			0.15;						/* default: 0.15				(general darkness of the app)													*/
 	--messagetransparency:			0.5;						/* default: 0.5					(additional shadows behind messages, set to 0 to remove boxes)					*/
 	--guildchanneltransparency:		0.15;						/* default: 0.15				(additional darkness for guild/channel list)									*/
 	--chatinputtransparency:		0.0;						/* default: 0.0					(additional darkness for chat input container)									*/
 	--memberlisttransparency:		0.0;						/* default: 0.0					(additional darkness for member list)											*/
-	--accentcolor:					190,78,180;					/* default: 190,78,180			(RGB-format - blurple: 88,101,242 bd-blue: 58,113,193)							*/
+	--accentcolor:					0, 150, 255;				/* default: 190,78,180			(RGB-format - blurple: 88,101,242 bd-blue: 58,113,193)							*/
 	
-	--font:							"Tahoma", Tahoma;		/* font used in most places										*/
+	--font:							"Tahoma", Tahoma;		/* font used in most places								                                       						*/
 	--textshadow:					transparent;				/* default: transparent			(textshadow for text ontop of accentcolor nodes, ONLY accepts a color, no px)	*/
 	--settingsicons:				1;							/* Use Settings Icons in User Settings: 1 = yes, 0 = no															*/
 	
-	--background:					url(https://1justjoey.github.io/BDXPTHEME/bliss.png);	/* general background image				*/
+	--background:					url(https://1justjoey.github.io/BDXPTHEME/bliss.png);	/* general background image															*/
 	--backgroundposition:			center;						/* default: center				(position of background - values: [center/top/right/bottom/left])				*/
 	--backgroundsize:				cover;						/* default: cover				(sizefit of background - values: [cover/contain/auto])							*/
 	--backgroundblur:				unset;						/* default: unset				(blur in px, only works when --background is set to an image)					*/
@@ -45,7 +41,6 @@
 	--textdarkest: 					90,90,90;					/* default: 90,90,90			(text color for the darkest texts)												*/
 }
 
-}
 
 #app-mount .app-3xd6d0 .base-2jDfDU {
   top: var(--server-container) !important;
