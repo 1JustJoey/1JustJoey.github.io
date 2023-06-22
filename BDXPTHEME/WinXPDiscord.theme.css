@@ -1,0 +1,16 @@
+/**
+ * @name Windows XP Discord
+ * @author Just Joey	
+ * @version 0.0.1
+ * @invite ZHthyCw
+ * @description A Windows XP Theme for Better Discord,may not work on macOS.
+ * @source https://1justjoey.github.io/BDXPTHEME
+ * @website https://1justjoey.github.io
+
+@import url("https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css");
+
+:root {
+  --HSL-server-icon-size: 40px;  /* Size of the server icons | DEFAULT: 40px */
+  --HSL-server-spacing: 10px;  /* Spacing between each server icon | DEFAULT: 10px */
+  --HSL-server-direction: column; /* Direct of the server list. | Options: column, column-reverse | DEFAULT: column */
+}
