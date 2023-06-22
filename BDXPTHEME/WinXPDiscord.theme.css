@@ -332,3 +332,10 @@ body.foldercontentopened .base-2jDfDU {
 .accountProfilePopoutWrapper-3GskID {
   left: 0;
 }
+
+.body {
+  background-image: url('https://1JustJoey.github.io/BDXPTHEME/bliss.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Tahoma;
+}
