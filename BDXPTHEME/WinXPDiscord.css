@@ -1,5 +1,3 @@
-@import url (https://1justjoey.github.io/BDXPTHEME/Background.css);
-
 :root {
   --server-size: var(--HSL-server-icon-size, var(--HSL-size, 35px));
   --server-spacing: var(--HSL-server-spacing, var(--HSL-spacing, 10px));
