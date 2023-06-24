@@ -1,8 +1,3 @@
-body {
-    font-family: Tahoma;
-    }
-
-
 :root {
   --server-size: var(--HSL-server-icon-size, var(--HSL-size, 35px));
   --server-spacing: var(--HSL-server-spacing, var(--HSL-spacing, 10px));
@@ -10,6 +5,12 @@ body {
   --server-direction: var(--HSL-server-direction, column);
   --server-alignment: var(--HSL-server-alignment, flex-start);
 }
+
+body {
+    font-family: Tahoma;
+    }
+
+
 
 #app-mount .app-3xd6d0 .base-2jDfDU {
   top: var(--server-container) !important;
