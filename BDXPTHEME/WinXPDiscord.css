@@ -11,9 +11,9 @@ body {
     }
 
   --app-bg: url(https://1justjoey.github.io/BDXPTHEME/bliss.png);
-  --app-blur: 6px;
-  --app-margin: 24px;
-  --app-radius: 10px;
+  --app-blur: 0px;
+  --app-margin: 0px;
+  --app-radius: 0px;
 
 #app-mount .app-3xd6d0 .base-2jDfDU {
   top: var(--server-container) !important;
