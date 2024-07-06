@@ -1,0 +1,142 @@
+@font-face {
+   font-family: Pixel Emulator;
+   src: url(PixelEmulator-xq08.ttf);
+}
+body[theme=dark] #theme-text::before {
+  content: ' Light mode';
+}
+body #theme-text::before {
+  content: ' Dark mode';
+}
+#theme-icon {
+  width: 16px;
+  height: 16px;
+}
+body #theme-icon {
+  background: url('images/moon.png');
+  display: inline-block;
+}
+body[theme=dark] #theme-icon {
+  background: url('images/sun.png');
+  display: inline-block;
+}
+body {
+  background-image: url('images/bliss.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+body[theme=dark] {
+  background-image: url('images/nightbliss.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+ul {
+  vertical-align: top;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 148, 255, 0.4);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+body[theme=dark] ul {
+  vertical-align: top;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 27, 181, 0.4);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+li {
+  float: left;
+  display: block;
+  padding: 8px
+}
+body[theme=dark] li {
+  color: white;
+  float: left;
+  display: block;
+  padding: 8px
+}
+html, body, div {
+    color: black;
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    font-family: Pixel Emulator;
+    vertical-align:baseline;
+}
+html[theme=dark], body[theme=dark], div {
+    color: white;
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    font-family: Pixel Emulator;
+    vertical-align:baseline;
+}
+li a {
+	color: black;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: color 0.5s, background-color 0.5s;
+}
+body[theme=dark] li a {
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: color 0.5s, background-color 0.5s;
+}
+li a:hover {
+	color: white;
+	background-color: #000000;
+    border-radius: 5px;
+	animation: fadeIn 1s;
+    -webkit-animation: fadeIn 0.5s;
+    -moz-animation: fadeIn 0.5s;
+    -o-animation: fadeIn 0.5s;
+    -ms-animation: fadeIn 0.5s;
+}
+body[theme=dark] li a:hover {
+	color: black;
+	background-color: #FFFFFF;
+    border-radius: 5px;
+	animation: fadeIn 1s;
+    -webkit-animation: fadeIn 0.5s;
+    -moz-animation: fadeIn 0.5s;
+    -o-animation: fadeIn 0.5s;
+    -ms-animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.right {
+	float: right;
+}
