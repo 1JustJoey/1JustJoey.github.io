@@ -3,10 +3,10 @@
    src: url(PixelEmulator-xq08.ttf);
 }
 body[theme=dark] #theme-text::before {
-  content: ' Light mode';
+  content:' Light mode';
 }
 body #theme-text::before {
-  content: ' Dark mode';
+  content:' Dark mode';
 }
 #theme-icon {
   width: 16px;
@@ -108,7 +108,7 @@ body[theme=dark] li a:hover {
 	color: black;
 	background-color: #FFFFFF;
     border-radius: 5px;
-	animation: fadeIn 1s;
+	animation: fadeIn 0.5s;
     -webkit-animation: fadeIn 0.5s;
     -moz-animation: fadeIn 0.5s;
     -o-animation: fadeIn 0.5s;
