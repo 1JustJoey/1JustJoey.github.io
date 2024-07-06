@@ -21,6 +21,7 @@ body[theme=dark] #theme-icon {
   display: inline-block;
 }
 body {
+  transition: background 0.5s;
   background-image: url('images/bliss.webp');
   background-repeat: no-repeat;
   background-attachment: fixed;
