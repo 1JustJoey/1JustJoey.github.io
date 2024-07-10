@@ -182,12 +182,12 @@ body[theme=dark] .main-container {
 	text-decoration: underline;
 }
 @keyframes rainbow {
-            0% { color: red; text-shadow: 0 0 10px red; }
-            14.3% { color: orange; text-shadow: 0 0 10px orange; }
-            28.6% { color: yellow; text-shadow: 0 0 10px yellow; }
-            42.9% { color: green; text-shadow: 0 0 10px green; }
-            57.2% { color: blue; text-shadow: 0 0 10px blue; }
-            71.5% { color: indigo; text-shadow: 0 0 10px indigo; }
-            85.8% { color: violet; text-shadow: 0 0 10px violet; }
-            100% { color: red; text-shadow: 0 0 10px red; }
+            0% { color: red; text-shadow: 0 0 10px white; }
+            14.3% { color: orange; text-shadow: 0 0 10px white; }
+            28.6% { color: yellow; text-shadow: 0 0 10px white; }
+            42.9% { color: green; text-shadow: 0 0 10px white; }
+            57.2% { color: blue; text-shadow: 0 0 10px white; }
+            71.5% { color: indigo; text-shadow: 0 0 10px white; }
+            85.8% { color: violet; text-shadow: 0 0 10px white; }
+            100% { color: red; text-shadow: 0 0 10px white; }
         }
