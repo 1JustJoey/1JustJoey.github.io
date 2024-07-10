@@ -1,6 +1,6 @@
 @font-face {
    font-family: Pixel Emulator;
-   src: url(PixelEmulator-xq08.ttf);
+   src: url(font/PixelEmulator-xq08.ttf);
 }
 body[theme=dark] #theme-text::before {
   content:' Light mode';
@@ -26,6 +26,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  overflow-x: hidden;
 }
 body[theme=dark] {
   background-image: url('images/nightbliss.png');
@@ -95,20 +96,20 @@ body[theme=dark] li a {
 	transition: color 0.5s, background-color 0.5s;
 }
 li a:hover {
-	color: white;
-	background-color: #000000;
+    color: white;
+    background-color: #000000;
     border-radius: 5px;
-	animation: fadeIn 1s;
+    animation: fadeIn 0.5s;
     -webkit-animation: fadeIn 0.5s;
     -moz-animation: fadeIn 0.5s;
     -o-animation: fadeIn 0.5s;
     -ms-animation: fadeIn 0.5s;
 }
 body[theme=dark] li a:hover {
-	color: black;
-	background-color: #FFFFFF;
+    color: black;
+    background-color: #FFFFFF;
     border-radius: 5px;
-	animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
     -webkit-animation: fadeIn 0.5s;
     -moz-animation: fadeIn 0.5s;
     -o-animation: fadeIn 0.5s;
@@ -141,3 +142,52 @@ body[theme=dark] li a:hover {
 .right {
 	float: right;
 }
+.main-container {
+	        width: calc(100% - 50px);
+	        height: calc(100% - 50px);
+	        margin: 25px;
+	        border-radius: 10px;
+	        color: black;
+	        radius: 10px;
+			background-color: rgba(0, 148, 255, 0.4);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+			box-sizing: border-box;
+			padding: 5px;
+}
+body[theme=dark] .main-container {
+	    width: calc(100% - 50px);
+	    height: calc(100% - 50px);
+	    margin: 25px;
+	    border-radius: 10px;
+	    color: white;
+	    radius: 10px;
+	    background-color: rgba(0, 27, 181, 0.4);
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+		box-sizing: border-box;
+}
+.center-rainbow {
+    text-align: center;
+    }
+.center-rainbow a {
+	text-decoration: none;
+	font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+	background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-clip: text;
+    color: transparent;
+	  animation: rainbow 5s infinite;
+}
+.center-rainbow a:hover {
+	text-decoration: underline;
+}
+@keyframes rainbow {
+            0% { color: red; text-shadow: 0 0 10px red; }
+            14.3% { color: orange; text-shadow: 0 0 10px orange; }
+            28.6% { color: yellow; text-shadow: 0 0 10px yellow; }
+            42.9% { color: green; text-shadow: 0 0 10px green; }
+            57.2% { color: blue; text-shadow: 0 0 10px blue; }
+            71.5% { color: indigo; text-shadow: 0 0 10px indigo; }
+            85.8% { color: violet; text-shadow: 0 0 10px violet; }
+            100% { color: red; text-shadow: 0 0 10px red; }
+        }
