@@ -21,7 +21,7 @@ body[theme=dark] #theme-icon {
   display: inline-block;
 }
 body {
-  transition: background 0.5s;
+  transition: background 0.25s;
   background-image: url('images/bliss.webp');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -87,33 +87,33 @@ li a {
 	color: black;
 	text-decoration: none;
 	border-radius: 5px;
-	transition: color 0.5s, background-color 0.5s;
+	transition: color 0.25s, background-color 0.25s;
 }
 body[theme=dark] li a {
 	color: white;
 	text-decoration: none;
 	border-radius: 5px;
-	transition: color 0.5s, background-color 0.5s;
+	transition: color 0.25s, background-color 0.25s;
 }
 li a:hover {
     color: white;
     background-color: #000000;
     border-radius: 5px;
-    animation: fadeIn 0.5s;
-    -webkit-animation: fadeIn 0.5s;
-    -moz-animation: fadeIn 0.5s;
-    -o-animation: fadeIn 0.5s;
-    -ms-animation: fadeIn 0.5s;
+    animation: fadeIn 0.25s;
+    -webkit-animation: fadeIn 0.25s;
+    -moz-animation: fadeIn 0.25s;
+    -o-animation: fadeIn 0.25s;
+    -ms-animation: fadeIn 0.25s;
 }
 body[theme=dark] li a:hover {
     color: black;
     background-color: #FFFFFF;
     border-radius: 5px;
-    animation: fadeIn 0.5s;
-    -webkit-animation: fadeIn 0.5s;
-    -moz-animation: fadeIn 0.5s;
-    -o-animation: fadeIn 0.5s;
-    -ms-animation: fadeIn 0.5s;
+    animation: fadeIn 0.25s;
+    -webkit-animation: fadeIn 0.25s;
+    -moz-animation: fadeIn 0.25s;
+    -o-animation: fadeIn 0.25s;
+    -ms-animation: fadeIn 0.25s;
 }
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -168,26 +168,32 @@ body[theme=dark] .main-container {
 		box-sizing: border-box;
 }
 .center-rainbow {
-    text-align: center;
-    }
+  text-align: center;
+  text-decoration: none;
+}
+
 .center-rainbow a {
-	text-decoration: none;
-	font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-	background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-    background-clip: text;
-    color: transparent;
-	  animation: rainbow 5s infinite;
+  text-decoration-color: transparent;
+  text-decoration-line: underline;
+  text-decoration-skip-ink: auto;
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  background-clip: text;
+  color: transparent;
+  animation: rainbow 5s infinite;
+  transition: text-decoration-color 0.25s ease;
 }
 .center-rainbow a:hover {
-	text-decoration: underline;
+  text-decoration-color: currentColor;
+  transition: text-decoration-color 0.25s ease;
 }
 @keyframes rainbow {
-            0% { color: red; text-shadow: 0 0 10px white; }
-            14.3% { color: orange; text-shadow: 0 0 10px white; }
-            28.6% { color: yellow; text-shadow: 0 0 10px white; }
-            42.9% { color: green; text-shadow: 0 0 10px white; }
-            57.2% { color: blue; text-shadow: 0 0 10px white; }
-            71.5% { color: indigo; text-shadow: 0 0 10px white; }
-            85.8% { color: violet; text-shadow: 0 0 10px white; }
-            100% { color: red; text-shadow: 0 0 10px white; }
+            0% { color: red; text-shadow: 0 0 10px white; border-color:red; }
+            14.3% { color: orange; text-shadow: 0 0 10px white; border-color:orange; }
+            28.6% { color: yellow; text-shadow: 0 0 10px white; border-color:yellow; }
+            42.9% { color: green; text-shadow: 0 0 10px white; border-color:green; }
+            57.2% { color: blue; text-shadow: 0 0 10px white;  border-color:blue;}
+            71.5% { color: indigo; text-shadow: 0 0 10px white;  border-color:indigo;}
+            85.8% { color: violet; text-shadow: 0 0 10px white;  border-color:violet;}
+            100% { color: red; text-shadow: 0 0 10px white;  border-color:red;}
         }
