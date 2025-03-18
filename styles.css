@@ -1,100 +1,99 @@
 @font-face {
-   font-family: Pixel Emulator;
-   src: url(font/PixelEmulator-xq08.ttf);
+    font-family: Pixel Emulator;
+    src: url(font/PixelEmulator-xq08.ttf);
 }
+
 body[theme=dark] #theme-text::before {
-  content:' Light mode';
+    content: ' Light mode';
 }
+
 body #theme-text::before {
-  content:' Dark mode';
+    content: ' Dark mode';
 }
+
 #theme-icon {
-  width: 16px;
-  height: 16px;
+    width: 16px;
+    height: 16px;
 }
+#line-icon {
+    width: 16px;
+    height: 16px;
+}
+
 body #theme-icon {
-  background: url('images/moon.png');
-  display: inline-block;
+    background: url('images/moon.png');
+    display: inline-block;
 }
+body #line-icon {
+    background: url('images/3line_lighty.png');
+    display: inline-block;
+}
+
 body[theme=dark] #theme-icon {
-  background: url('images/sun.png');
-  display: inline-block;
+    background: url('images/sun.png');
+    display: inline-block;
 }
+body[theme=dark] #line-icon {
+    background: url('images/3line_darky.png');
+    display: inline-block;
+}
+
 body {
-  transition: background 0.25s;
-  background-image: url('images/bliss.webp');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  overflow-x: hidden;
+    transition: background 0.25s;
+    background-image: url('images/bliss.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
 }
+
 body[theme=dark] {
-  background-image: url('images/nightbliss.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+    background-image: url('images/nightbliss.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
-ul {
-  vertical-align: top;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: rgba(0, 148, 255, 0.4);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-}
-body[theme=dark] ul {
-  vertical-align: top;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: rgba(0, 27, 181, 0.4);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-}
-li {
-  float: left;
-  display: block;
-  padding: 8px
-}
-body[theme=dark] li {
-  color: white;
-  float: left;
-  display: block;
-  padding: 8px
-}
-html, body, div {
+
+html,
+body,
+div {
     color: black;
-    margin:0;
-    padding:0;
-    border:0;
-    font-size:100%;
-    font:inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
     font-family: Pixel Emulator;
-    vertical-align:baseline;
+    vertical-align: baseline;
 }
-html[theme=dark], body[theme=dark], div {
+
+html[theme=dark],
+body[theme=dark],
+div {
     color: white;
-    margin:0;
-    padding:0;
-    border:0;
-    font-size:100%;
-    font:inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
     font-family: Pixel Emulator;
-    vertical-align:baseline;
+    vertical-align: baseline;
 }
+
 li a {
-	color: black;
-	text-decoration: none;
-	border-radius: 5px;
-	transition: color 0.25s, background-color 0.25s;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: color 0.25s, background-color 0.25s;
 }
+
 body[theme=dark] li a {
-	color: white;
-	text-decoration: none;
-	border-radius: 5px;
-	transition: color 0.25s, background-color 0.25s;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: color 0.25s, background-color 0.25s;
 }
+
 li a:hover {
     color: white;
     background-color: #000000;
@@ -105,6 +104,7 @@ li a:hover {
     -o-animation: fadeIn 0.25s;
     -ms-animation: fadeIn 0.25s;
 }
+
 body[theme=dark] li a:hover {
     color: black;
     background-color: #FFFFFF;
@@ -115,85 +115,265 @@ body[theme=dark] li a:hover {
     -o-animation: fadeIn 0.25s;
     -ms-animation: fadeIn 0.25s;
 }
+
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @-moz-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @-webkit-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @-o-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @-ms-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
+
 .right {
-	float: right;
+    float: right;
 }
-.main-container {
-	        width: calc(100% - 50px);
-	        height: calc(100% - 50px);
-	        margin: 25px;
-	        border-radius: 10px;
-	        color: black;
-	        radius: 10px;
-			background-color: rgba(0, 148, 255, 0.4);
-            backdrop-filter: blur(10px);
-            overflow: hidden;
-			box-sizing: border-box;
-			padding: 5px;
-}
-body[theme=dark] .main-container {
-	    width: calc(100% - 50px);
-	    height: calc(100% - 50px);
-	    margin: 25px;
-	    border-radius: 10px;
-	    color: white;
-	    radius: 10px;
-	    background-color: rgba(0, 27, 181, 0.4);
-        backdrop-filter: blur(10px);
-        overflow: hidden;
-		box-sizing: border-box;
-}
+
 .center-rainbow {
-  text-align: center;
-  text-decoration: none;
+    text-align: center;
+    text-decoration: none;
 }
 
 .center-rainbow a {
-  text-decoration-color: transparent;
-  text-decoration-line: underline;
-  text-decoration-skip-ink: auto;
-  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-  background-clip: text;
-  color: transparent;
-  animation: rainbow 5s infinite;
-  transition: text-decoration-color 0.25s ease;
+    text-decoration-color: transparent;
+    text-decoration-line: underline;
+    text-decoration-skip-ink: auto;
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s infinite;
+    transition: text-decoration-color 0.25s ease;
 }
+
 .center-rainbow a:hover {
-  text-decoration-color: currentColor;
-  transition: text-decoration-color 0.25s ease;
+    text-decoration-color: currentColor;
+    transition: text-decoration-color 0.25s ease;
 }
+
 @keyframes rainbow {
-            0% { color: red; text-shadow: 0 0 10px white; border-color:red; }
-            14.3% { color: orange; text-shadow: 0 0 10px white; border-color:orange; }
-            28.6% { color: yellow; text-shadow: 0 0 10px white; border-color:yellow; }
-            42.9% { color: green; text-shadow: 0 0 10px white; border-color:green; }
-            57.2% { color: blue; text-shadow: 0 0 10px white;  border-color:blue;}
-            71.5% { color: indigo; text-shadow: 0 0 10px white;  border-color:indigo;}
-            85.8% { color: violet; text-shadow: 0 0 10px white;  border-color:violet;}
-            100% { color: red; text-shadow: 0 0 10px white;  border-color:red;}
-        }
+    0% {
+        color: red;
+        text-shadow: 0 0 10px white;
+        border-color: red;
+    }
+
+    14.3% {
+        color: orange;
+        text-shadow: 0 0 10px white;
+        border-color: orange;
+    }
+
+    28.6% {
+        color: yellow;
+        text-shadow: 0 0 10px white;
+        border-color: yellow;
+    }
+
+    42.9% {
+        color: green;
+        text-shadow: 0 0 10px white;
+        border-color: green;
+    }
+
+    57.2% {
+        color: blue;
+        text-shadow: 0 0 10px white;
+        border-color: blue;
+    }
+
+    71.5% {
+        color: indigo;
+        text-shadow: 0 0 10px white;
+        border-color: indigo;
+    }
+
+    85.8% {
+        color: violet;
+        text-shadow: 0 0 10px white;
+        border-color: violet;
+    }
+
+    100% {
+        color: red;
+        text-shadow: 0 0 10px white;
+        border-color: red;
+    }
+}
+
+[theme=dark] .sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+    background: rgba(0, 27, 181, 0.4);
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+    background: rgba(0, 148, 255, 0.4);
+    backdrop-filter: blur(10px);
+    color: black;
+}
+
+.sidebar.collapsed {
+    transform: translateX(100%);
+}
+.sidebar h2 {
+	text-align: center;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+	text-align: center;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+body[theme=dark] .content {
+	color: white;
+}
+.content {
+	color: black;
+}
+
+
+.content {
+    margin-right: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-right 0.3s ease-in-out;
+}
+
+.sidebar.collapsed+.content {
+    margin-right: 0;
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 15px;
+    right: 285px;
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    /* Ensure it stays above the sidebar */
+    border-radius: 5px;
+}
+.toggle-btn2 {
+    position: fixed;
+    top: 65px;
+    right: 285px;
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    /* Ensure it stays above the sidebar */
+    border-radius: 5px;
+}
+
+[theme=dark] .toggle-btn {
+    right: 285px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    /* Ensure it stays above the sidebar */
+    border-radius: 5px;
+}
+[theme=dark] .toggle-btn2 {
+    right: 285px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    /* Ensure it stays above the sidebar */
+    border-radius: 5px;
+}
+
+
+.sidebar.collapsed~.toggle-btn {
+    right: 15px;
+}
+.sidebar.collapsed~.toggle-btn2 {
+    right: 15px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(100%);
+    }
+
+    .sidebar.expanded {
+        transform: translateX(0);
+    }
+
+    .sidebar.collapsed+.content {
+        margin-right: 0;
+    }
+}

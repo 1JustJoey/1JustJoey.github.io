@@ -21,3 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.setAttribute('theme', userTheme ?? systemTheme);
   };
 });
+ function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const toggleBtn = document.getElementById('toggle-btn');
+			const toggleBtn2 = document.getElementById('toggle-btn2');
+            sidebar.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                toggleBtn.style.right = '25px';
+				toggleBtn2.style.right = '25px';
+            } else {
+                toggleBtn.style.right = '285px';
+				toggleBtn2.style.right = '285px';
+            }
+        }
