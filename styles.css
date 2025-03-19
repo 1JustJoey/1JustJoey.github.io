@@ -368,12 +368,12 @@ body[theme=dark] .content {
     .sidebar {
         transform: translateX(100%);
     }
-
+    
     .sidebar.expanded {
         transform: translateX(0);
     }
-
-    .sidebar.collapsed+.content {
+    
+    .sidebar.collapsed + .content {
         margin-right: 0;
     }
 }
