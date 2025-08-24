@@ -1,36 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Joey's Website</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="images/favicon.ico" />
-</head>
-<body>
-  <div class="sidebar collapsed" id="sidebar">
-    <h2>Navigation</h2>
-    <ul>
-      <li><a href="https://1justjoey.github.io">Home</a></li>
-      <li><a href="https://gamejolt.com/@Just_Joey">GameJolt</a></li>
-      <li><a href="https://youtube.com/@Just_Joey">YouTube</a></li>
-      <li><a href="mailto:realjustjoey@gmail.com">Contact</a></li>
-    </ul>
+<link rel="stylesheet" href="https://unpkg.com/98.css">
+<link rel="icon" href="images/favicon.ico" />
+<title>Just Joey</title>
+<style>
+.theme::before {
+      content: "Dark mode";
+    }
+
+    .dark .theme::before {
+      content: "Light mode";
+    }
+
+menu[role=tablist] > li {
+  background-color: silver;
+}
+.dark menu[role=tablist] > li {
+  background-color: #3f3f3f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url('images/bliss.webp'); 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed; 
+}
+.dark body {
+  color: #dddddd;
+  background-image: url('images/nightbliss.png'); 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed; 
+}
+.dark .window {
+  background-color: #3f3f3f;
+}
+.dark menu[role=tablist]>li>a {
+  color: #dddddd;
+}
+.dark menu[role=tablist]>li[aria-selected=true] {
+  background-color: #3f3f3f;
+}
+[role=tabpanel]:not([aria-selected=true]) {
+  display: none;
+}
+.marquee {
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+}
+@keyframes marquee {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+
+</style>
+<script>
+      // YouTube API
+const apiKey = "AIzaSyAVCX3weVh6o-UfWLeU2a1rpnS80OFe_vs";
+const channelId = "UCrtgYpVkJJwHbTozLYnLnRQ";
+
+async function loadLatestVideo() {
+  try {
+    const response = await fetch(
+      `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&order=date&part=snippet&type=video&maxResults=1`
+    );
+    const data = await response.json();
+    const videoId = data.items[0].id.videoId;
+
+    const embedHtml = `
+      <div class="responsive-iframe">
+        <iframe
+          src="https://www.youtube.com/embed/${videoId}"
+          title="Latest YouTube Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    `;
+
+    document.getElementById('videoContainer').innerHTML = embedHtml;
+  } catch (error) {
+    console.error('Error fetching YouTube video:', error);
+    document.getElementById('videoContainer').textContent = 'Failed to load video.';
+  }
+}
+
+loadLatestVideo();
+
+function focusTab(tablink) {
+  let tab = tablink.closest('[role=tab]');
+  let tablist = tab.closest('[role=tablist]');
+  let activetab = tablist.querySelector('[role=tab][aria-selected=true]');
+  activetab?.removeAttribute('aria-selected');
+  tab.setAttribute('aria-selected', 'true');
+  let tabindex = Array.prototype.indexOf.call(tablist.children, tab);
+  let tabcontainer = tablist.parentElement;
+  let tabpanels = tabcontainer.querySelectorAll('[role=tabpanel]');
+  let activepanel = tabcontainer.querySelector('[role=tabpanel][aria-selected=true]');
+  activepanel?.removeAttribute('aria-selected');
+  tabpanels[tabindex].setAttribute('aria-selected', 'true');
+}
+
+function toggleTheme() {
+  document.documentElement.classList.toggle('dark');
+}
+
+</script>
+<div class="window-body">
+  <menu role="tablist">
+    <li role="tab" aria-selected="true"><a href="javascript:undefined" onclick="focusTab(this);">About</a></li>
+    <li role="tab"><a href="javascript:undefined" onclick="focusTab(this);">Projects</a></li>
+    <li role="tab"><a href="javascript:undefined" onclick="focusTab(this);">Socials</a></li>
+	<li role="tab"><a href="javascript:undefined" onclick="focusTab(this);">YouTube</a></li>
+    <li role="tab"><a href="javascript:undefined" onclick="focusTab(this);">Credits</a></li>
+    <li role="tab" style="margin-left: auto;"><a href="javascript:toggleTheme(this);"><div class="theme"></div></a></li>
+  </menu>
+  <div class="window" role="tabpanel" aria-selected="true">
+    <div class="window-body">
+	<h2>About</h2>
+	<p>Welcome to my portfolio! I’m a game developer who primarily works in <a href="https://www.clickteam.com/">Clickteam Fusion</a>, with some growing experience in <a href="https://blender.org">Blender</a> for 3D work. I’m always learning and improving, and I love experimenting with new ideas. I also take commissions—if you’re interested in having a game developed, head over to the "Socials" tab to join my Discord and reach out. Let’s create something amazing together!</p>
+
+
+    </div>
   </div>
-
-  <div class="content" id="content">
-    <h1>Under construction, expect more and better later!</h1>
-    <p>Read the above header, under construction.</p>
-
-    <div class="latest-video">
+  <div class="window" role="tabpanel">
+    <div class="window-body">
+      <h2>Projects</h2>
+  <li><a href="https://gamejolt.com/games/mnav/913725">Mine Nights at Vinnie's</a></li><br>
+  <li><a href="https://gamejolt.com/games/tfb/1003387">The Final Breath (W.I.P.)</a></li><br>
+  <li><a href="put-overlooked-link-here">Overlooked (W.I.P.)</a></li><br>
+  <li><a href="https://gamejolt.com/@FNaFBetaStuff">FNaF Beta Stuff</a></li><br>
+  <li><a href="https://gamejolt.com/games/Hat/822273">Secret Hat's Addiction (W.I.P.)</a></li>
+    </div>
+  </div>
+  <div class="window" role="tabpanel">
+    <div class="window-body">
+      <h2>Socials</h2>
+	  <li><a href="discord">Discord</a></li><br>
+	  <li><a href="https://gamejolt.com/@Just_Joey">GameJolt</a></li><br>
+	  <li><a href="https://youtube.com/@Just_Joey">YouTube</a></li><br>
+	  <li><a href="https://x.com/Just_Joey_Games">Twitter</a></li><br>
+	  <li><a href="https://steamcommunity.com/profiles/76561199235885591">Steam</a></li> 
+    </div>
+  </div>
+  <div class="window" role="tabpanel">
+    <div class="window-body">
+	<div class="latest-video">
       <h2>Latest YouTube Video</h2>
       <div class="video-container" id="videoContainer">Loading video...</div>
     </div>
   </div>
-
-  <button class="toggle-btn" id="toggle-btn"><span id="line-icon"></span></button>
-  <button class="toggle-btn2" id="toggle-btn2"><span id="theme-icon"></span></button>
-
-   <script src="script.js"></script>
-</body>
-</html>
+    </div>
+  <div class="window" role="tabpanel">
+    <div class="window-body" style="overflow: hidden;">
+	<h2>Credits</h2>
+	 <div style="overflow: hidden;">
+      <div class="marquee">
+        <h4>Owner</h4>
+        <p>Joey</p>
+        <br>
+        <h4>Web Development</h4>
+        <p>Tech Stuff</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
