@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('fonts/VCR_OSD_MONO.ttf') format('truetype');
+}
+
+body {
+    font-family: 'VCR OSD Mono', monospace;
+}
+
+a, a:visited {
+    color: white; /* keep important only if necessary */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Only rainbow for links with .speciallink */
+.speciallink a {
+    animation-name: RainbowText;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.greentext a {
+	color: lightgreen !important;
+}
+
+.bluetext a {
+	color: #38ACFF !important;
+	text-decoration: #38ACFF wavy underline; 
+}
+.bluetext a:hover {
+	color: #38ACFF !important;
+	text-decoration: #38ACFF underline; 
+}
+.smoltext {
+	font-size: 14px;
+}
+
+@keyframes RainbowText {
+    0% { color: red; }
+    25% { color: yellow; }
+    50% { color: light blue; }
+    75% { color: green; }
+    100% { color: red; }
+}

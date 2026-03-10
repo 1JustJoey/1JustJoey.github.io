@@ -1,0 +1,187 @@
+/* BODY */
+body{
+  margin:0;
+  color:white;
+  font-family:'VCR OSD Mono', monospace;
+  background-image:url('images/nightbliss.png');
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+/* PAGE LAYOUT */
+.container{
+  max-width:1600px;
+  margin:auto;
+  padding:30px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:40px;
+  grid-template-areas:
+    "about rules"
+    "projects rules";
+}
+
+/* WINDOW SYSTEM */
+.window{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.windowImage{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.windowContent{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:30px; /* reduced padding to fit content */
+  box-sizing:border-box;
+  overflow:auto;
+  border-radius:10px;
+  /* background removed so images show naturally */
+}
+
+/* GRID AREAS */
+.about{ grid-area:about; }
+.projects{ grid-area:projects; }
+.rules{ grid-area:rules; }
+
+/* PROFILE */
+.profile{
+  display:flex;
+  gap:20px;
+  margin-bottom:20px;
+}
+
+.avatarColumn{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.avatar{
+  width:140px;
+  height:auto;
+  border-radius:30px;
+  object-fit:contain;
+}
+
+.profileText{
+  max-width:600px;
+}
+
+h1{
+  margin:0;
+  font-size:42px;
+}
+
+p{
+  font-size:20px;
+}
+
+/* EXPERIENCE INSIDE ABOUT */
+.experience{
+  margin-top:20px;
+}
+
+.experience h2{
+  margin-bottom:8px;
+  font-size:18px; /* reduced */
+}
+
+.experience-section{
+  margin-top:12px;
+}
+
+.experience-section h3{
+  margin-bottom:4px;
+  font-size:16px; /* reduced */
+  text-decoration:underline;
+}
+
+.experience-section ul{
+  margin:0;
+  padding-left:20px;
+  font-size:14px; /* reduced to remove scrollbar */
+  list-style-type:disc;
+}
+
+/* PROJECTS */
+.projects p{
+  font-size:18px;
+}
+
+/* RULES */
+.rulesText{
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* CREDIT */
+.credit{
+  font-size:16px;
+  opacity:.8;
+  text-align:center;
+  margin-top:8px;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width:900px){
+  .container{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "about"
+      "projects"
+      "rules";
+  }
+
+  .windowContent{
+    padding:20px; /* slightly smaller padding for mobile */
+  }
+
+  .profile{
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+  }
+
+  .profileText{
+    max-width:100%;
+  }
+
+  h1{
+    font-size:32px;
+  }
+
+  p{
+    font-size:16px;
+  }
+
+  .experience h2{
+    font-size:16px;
+  }
+
+  .experience-section h3{
+    font-size:14px;
+  }
+
+  .experience-section ul{
+    font-size:13px;
+  }
+
+  .projects p{
+    font-size:16px;
+  }
+
+  .credit{
+    font-size:14px;
+  }
+}
