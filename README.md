@@ -1,2 +1,2 @@
 # 1JustJoey.github.io
-New website hosting
+Just my website, check it out for more info and stuff!
