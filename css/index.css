@@ -312,6 +312,20 @@ p {
 
     .profileText {
         max-width: 100%;
+        text-align: center;
+    }
+
+    .profileText h1 {
+        text-align: center;
+    }
+
+    .experience {
+        text-align: center;
+    }
+
+    .experience-section ul {
+        list-style-position: inside;
+        padding-left: 0;
     }
 
     h1 {
