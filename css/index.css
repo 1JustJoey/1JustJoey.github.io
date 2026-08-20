@@ -93,14 +93,10 @@ a:hover {
     max-width: 1600px;
     margin: 0 auto;
     padding: 30px;
-
     display: grid;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto auto;
-
     gap: 40px;
-
     grid-template-areas:
         "about rules"
         "projects rules";
@@ -112,19 +108,14 @@ a:hover {
     position: relative;
     width: 100%;
     min-width: 0;
-
     border: var(--window-border) solid transparent;
-
     border-image-source: url("../images/windowframe.png");
     border-image-slice: var(--window-slice) fill;
     border-image-width: var(--window-border);
     border-image-outset: 0;
     border-image-repeat: round;
-
     background: transparent;
-
     overflow: visible;
-
     image-rendering: pixelated;
 }
 
@@ -135,38 +126,27 @@ a:hover {
 
     top: calc(var(--window-border) * -1);
     left: calc(var(--window-border) * -1);
-
     width: calc(100% + (var(--window-border) * 2));
     height: var(--window-title-height);
-
     display: flex;
     align-items: center;
-
     padding: 0 10px;
-
     overflow: hidden;
-
     z-index: 20;
     pointer-events: none;
 }
 
 .windowTitleText {
     display: block;
-
     margin-left: 0;
-
     font-family: 'VCR OSD Mono', monospace;
     font-size: 20px;
     line-height: 1;
-
     color: white;
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
     text-shadow: 1px 1px 0 #000;
-
     z-index: 21;
 }
 
@@ -176,11 +156,8 @@ a:hover {
     position: relative;
     min-width: 0;
     min-height: 0;
-
     padding: 30px;
-
     overflow: auto;
-
     background: transparent;
 }
 
@@ -215,7 +192,6 @@ a:hover {
 .avatar {
     width: 140px;
     height: auto;
-
     border-radius: 30px;
     object-fit: contain;
 }
