@@ -4,7 +4,7 @@
 }
 
 :root {
-    --window-slice: 30;
+    --window-slice: 30px;
     --window-border: 30px;
     --window-title-height: 30px;
 }
@@ -29,8 +29,6 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
 }
-
-/* Links */
 
 a,
 a:visited {
@@ -86,8 +84,6 @@ a:hover {
     }
 }
 
-/* Layout */
-
 .container {
     width: 100%;
     max-width: 1600px;
@@ -102,35 +98,126 @@ a:hover {
         "projects rules";
 }
 
-/* Windows */
-
 .window {
     position: relative;
     width: 100%;
     min-width: 0;
     border: var(--window-border) solid transparent;
-    border-image-source: url("../images/windowframe.png");
-    border-image-slice: var(--window-slice) fill;
-    border-image-width: var(--window-border);
-    border-image-outset: 0;
-    border-image-repeat: round;
     background: transparent;
     overflow: visible;
     image-rendering: pixelated;
 }
 
-/* Window title */
+.windowFrame {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: calc(100% + 60px);
+    height: calc(100% + 60px);
+
+    display: grid;
+
+    grid-template-columns:
+        30px
+        minmax(0, 1fr)
+        30px;
+
+    grid-template-rows:
+        30px
+        minmax(0, 1fr)
+        30px;
+
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+    image-rendering: pixelated;
+}
+
+.framePiece {
+    position: relative;
+    background-image: url("../images/windowframe.png");
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    pointer-events: none;
+}
+
+.frameTL {
+    background-size: 90px 90px;
+    background-position: 0 0;
+    z-index: 1;
+}
+
+.frameT {
+    background-size: 300% 90px;
+    background-position: 50% 0;
+    margin-left: -1px;
+    margin-right: -1px;
+    z-index: 2;
+}
+
+.frameTR {
+    background-size: 90px 90px;
+    background-position: 100% 0;
+    z-index: 1;
+}
+
+.frameL {
+    background-size: 90px 300%;
+    background-position: 0 50%;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    z-index: 2;
+}
+
+.frameC {
+    background-size: 300% 300%;
+    background-position: 50% 50%;
+    margin: -1px;
+    z-index: 3;
+}
+
+.frameR {
+    background-size: 90px 300%;
+    background-position: 100% 50%;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    z-index: 2;
+}
+
+.frameBL {
+    background-size: 90px 90px;
+    background-position: 0 100%;
+    z-index: 1;
+}
+
+.frameB {
+    background-size: 300% 90px;
+    background-position: 50% 100%;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -1px;
+    z-index: 2;
+}
+
+.frameBR {
+    background-size: 90px 90px;
+    background-position: 100% 100%;
+    margin-left: -1px;
+    margin-top: -1px;
+    z-index: 1;
+}
 
 .windowTitle {
     position: absolute;
-
     top: calc(var(--window-border) * -1);
     left: calc(var(--window-border) * -1);
     width: calc(100% + (var(--window-border) * 2));
     height: var(--window-title-height);
+
     display: flex;
     align-items: center;
     padding: 0 10px;
+
     overflow: hidden;
     z-index: 20;
     pointer-events: none;
@@ -150,8 +237,6 @@ a:hover {
     z-index: 21;
 }
 
-/* Content */
-
 .windowContent {
     position: relative;
     min-width: 0;
@@ -159,9 +244,8 @@ a:hover {
     padding: 30px;
     overflow: auto;
     background: transparent;
+    z-index: 5;
 }
-
-/* Grid areas */
 
 .about {
     grid-area: about;
@@ -174,8 +258,6 @@ a:hover {
 .rules {
     grid-area: rules;
 }
-
-/* Profile */
 
 .profile {
     display: flex;
@@ -200,8 +282,6 @@ a:hover {
     max-width: 600px;
 }
 
-/* Text */
-
 h1 {
     margin: 0;
     font-size: 42px;
@@ -210,8 +290,6 @@ h1 {
 p {
     font-size: 20px;
 }
-
-/* Experience */
 
 .experience {
     margin-top: 20px;
@@ -239,20 +317,14 @@ p {
     list-style-type: disc;
 }
 
-/* Projects */
-
 .projects p {
     font-size: 18px;
 }
-
-/* Rules */
 
 .rulesText {
     font-size: 15px;
     line-height: 1.6;
 }
-
-/* Credit */
 
 .credit {
     font-size: 16px;
@@ -261,17 +333,13 @@ p {
     margin-top: 8px;
 }
 
-/* Mobile */
-
 @media (max-width: 900px) {
     .container {
         grid-template-columns: minmax(0, 1fr);
-
         grid-template-areas:
             "about"
             "projects"
             "rules";
-
         padding: 20px;
         gap: 30px;
     }
@@ -331,4 +399,6 @@ p {
 
 .window img {
     max-width: 100%;
+    height: auto;
+    image-rendering: pixelated;
 }
