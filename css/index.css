@@ -25,7 +25,9 @@ body {
     background-image: url('../images/nightbliss.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    min-height: 100vh;
 }
 
 /* Links */
@@ -93,8 +95,10 @@ a:hover {
     padding: 30px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto auto;
+
     gap: 40px;
 
     grid-template-areas:
@@ -118,36 +122,38 @@ a:hover {
     border-image-repeat: round;
 
     background: transparent;
+
     overflow: visible;
+
+    image-rendering: pixelated;
 }
 
-/* Window titles */
+/* Window title */
 
 .windowTitle {
     position: absolute;
 
     top: calc(var(--window-border) * -1);
     left: calc(var(--window-border) * -1);
-    right: calc(var(--window-border) * -1);
 
+    width: calc(100% + (var(--window-border) * 2));
     height: var(--window-title-height);
-
-    padding: 0 var(--window-border);
 
     display: flex;
     align-items: center;
 
+    padding: 0 10px;
+
     overflow: hidden;
 
-    z-index: 10;
+    z-index: 20;
     pointer-events: none;
 }
 
 .windowTitleText {
-    position: relative;
     display: block;
 
-    transform: translateX(-20px);
+    margin-left: 0;
 
     font-family: 'VCR OSD Mono', monospace;
     font-size: 20px;
@@ -159,26 +165,23 @@ a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
 
-    text-shadow:
-        1px 1px 0 #000,
-        -1px 0 0 #000;
+    text-shadow: 1px 1px 0 #000;
 
-    z-index: 11;
+    z-index: 21;
 }
 
 /* Content */
 
 .windowContent {
     position: relative;
-    min-height: 0;
     min-width: 0;
+    min-height: 0;
 
     padding: 30px;
 
     overflow: auto;
-    background: transparent;
 
-    z-index: 1;
+    background: transparent;
 }
 
 /* Grid areas */
@@ -212,6 +215,7 @@ a:hover {
 .avatar {
     width: 140px;
     height: auto;
+
     border-radius: 30px;
     object-fit: contain;
 }
@@ -285,7 +289,8 @@ p {
 
 @media (max-width: 900px) {
     .container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+
         grid-template-areas:
             "about"
             "projects"
@@ -295,13 +300,18 @@ p {
         gap: 30px;
     }
 
+    .windowTitle {
+        height: 30px;
+        padding: 0 8px;
+    }
+
     .windowTitleText {
-        font-size: 18px;
-        transform: translateX(-12px);
+        font-size: 17px;
+        margin-left: 0;
     }
 
     .windowContent {
-        padding: 25px;
+        padding: 20px;
     }
 
     .profile {
@@ -312,20 +322,6 @@ p {
 
     .profileText {
         max-width: 100%;
-        text-align: center;
-    }
-
-    .profileText h1 {
-        text-align: center;
-    }
-
-    .experience {
-        text-align: center;
-    }
-
-    .experience-section ul {
-        list-style-position: inside;
-        padding-left: 0;
     }
 
     h1 {
