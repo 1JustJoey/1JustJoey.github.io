@@ -60,6 +60,9 @@ a:hover {
 .smoltext {
     font-size: 14px;
 }
+.smolertext {
+    font-size: 12px;
+}
 
 @keyframes RainbowText {
     0% {
