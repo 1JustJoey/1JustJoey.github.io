@@ -6,6 +6,10 @@
     font-family: 'Pixel Operator HB SC';
     src: url('../fonts/PixelOperator/PixelOperatorHBSC.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('../fonts/trebuchetms/trebuc.ttf') format('truetype');
+}
 
 :root {
     --window-slice: 30px;
@@ -65,7 +69,7 @@ a:hover {
     font-size: 14px;
 }
 .smolertext {
-    font-size: 15px;
+    font-size: 16px;
     font-family: 'Pixel Operator HB SC', monospace;
 }
 
@@ -220,27 +224,28 @@ a:hover {
     left: calc(var(--window-border) * -1);
     width: calc(100% + (var(--window-border) * 2));
     height: var(--window-title-height);
-
     display: flex;
     align-items: center;
     padding: 0 10px;
-
     overflow: hidden;
     z-index: 20;
     pointer-events: none;
 }
-
 .windowTitleText {
     display: block;
     margin-left: 0;
-    font-family: 'VCR OSD Mono', monospace;
-    font-size: 20px;
+    font-family: 'Trebuchet MS', monospace;
+	text-rendering: geometricPrecision;  /* Why doesn't this work??? Idk. I'm keeping it just in case. */
+	font-smooth: never;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
     line-height: 1;
     color: white;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-shadow: 1px 1px 0 #000;
+    text-shadow: 1px 1px 0 #0A1883;
     z-index: 21;
 }
 
