@@ -1,3 +1,4 @@
+/* Defining Fonts */
 @font-face {
     font-family: 'VCR OSD Mono';
     src: url('../fonts/VCR_OSD_MONO.ttf') format('truetype');
@@ -10,7 +11,7 @@
     font-family: 'Trebuchet MS';
     src: url('../fonts/trebuchetms/trebuc.ttf') format('truetype');
 }
-
+/* I forgot what this does */
 :root {
     --window-slice: 30px;
     --window-border: 30px;
